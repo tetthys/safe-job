@@ -4,24 +4,23 @@ declare(strict_types=1);
 
 namespace Tetthys\SafeJob\Integration\Laravel\Support;
 
+use Illuminate\Support\Facades\Log;
 use Tetthys\SafeJob\Core\Contracts\Logger;
 
-final readonly class LaravelLogger implements Logger
+final class LaravelLogger implements Logger
 {
-    public function __construct(private \Psr\Log\LoggerInterface $logger) {}
-
     public function info(string $message, array $context = []): void
     {
-        $this->logger->info($message, $context);
+        Log::info($message, $context);
     }
 
     public function warning(string $message, array $context = []): void
     {
-        $this->logger->warning($message, $context);
+        Log::warning($message, $context);
     }
 
     public function error(string $message, array $context = []): void
     {
-        $this->logger->error($message, $context);
+        Log::error($message, $context);
     }
 }

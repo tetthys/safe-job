@@ -6,7 +6,7 @@ namespace Tetthys\SafeJob\Integration\Laravel\Support;
 
 use Tetthys\SafeJob\Core\Contracts\Clock;
 
-final readonly class LaravelClock implements Clock
+final class LaravelClock implements Clock
 {
     public function nowEpoch(): int
     {
