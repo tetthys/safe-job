@@ -1,0 +1,45 @@
+{
+    "name": "tetthys/safejob",
+    "description": "Financial-grade idempotent job framework with Laravel integration",
+    "type": "library",
+    "license": "MIT",
+
+    "require": {
+        "php": "^8.5",
+        "illuminate/support": "^12.0",
+        "illuminate/database": "^12.0",
+        "illuminate/console": "^12.0"
+    },
+
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^9.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Tetthys\\SafeJob\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Tetthys\\SafeJob\\Tests\\": "tests/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tetthys\\SafeJob\\Integration\\Laravel\\LaravelSafeJobServiceProvider"
+            ]
+        }
+    },
+
+    "scripts": {
+        "test": "phpunit"
+    },
+
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
